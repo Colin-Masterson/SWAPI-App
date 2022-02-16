@@ -5,13 +5,26 @@ import Search from './Components/Search';
 function App() {
     const [data, setData] = useState([]);
     const [search, setSearch] = useState('');
+    const [filteredData, setFilteredData] = useState([]);
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
+        if (search !== '') {
+            const filtered = data.filter((item) => {
+                return Object.values(item.name)
+                    .join('')
+                    .toLowerCase()
+                    .includes(search.toLowerCase());
+            });
+            console.log(filtered);
+            setFilteredData(filtered);
+        } else {
+            setFilteredData(data);
+        }
     };
 
     useEffect(() => {
-        const url = `https://swapi.dev/api/people/?search=${search}`;
+        const url = `https://swapi.dev/api/people/`;
 
         const fetchData = async () => {
             try {
@@ -62,12 +75,15 @@ function App() {
         };
 
         fetchData();
-    }, [search]);
+    });
 
     return (
         <div className='App'>
             <Search search={handleSearch} />
-            <Table data={data} search={search} />
+            <Table
+                data={search.length > 1 ? filteredData : data}
+                search={search}
+            />
         </div>
     );
 }
