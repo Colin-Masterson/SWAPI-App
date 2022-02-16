@@ -1,4 +1,59 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #000;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
 .table-container {
     height: 90vh;
     width: auto;
+    padding: 0 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+
+    padding: 20px;
+}
+
+.search {
+    height: 100%;
+    width: 250px;
+    padding-left: 10px;
+    border-radius: 5px;
 }
