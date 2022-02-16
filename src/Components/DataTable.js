@@ -37,7 +37,7 @@ function Table({ data }) {
                 rows={data}
                 columns={columns}
                 getRowId={(row) => row.name}
-                disableExtendRowFullWidth={false}
+                hideFooter
             />
         </div>
     );
