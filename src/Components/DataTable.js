@@ -37,7 +37,8 @@ function Table({ data }) {
                 rows={data}
                 columns={columns}
                 getRowId={(row) => row.name}
-                hideFooter
+                pageSize={10}
+                rowsPerPageOptions={[10]}
             />
         </div>
     );
