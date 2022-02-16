@@ -17,7 +17,7 @@ function App() {
             try {
                 const response = await fetch(url);
                 const json = await response.json();
-                console.log(json.results);
+
                 setData(json.results);
             } catch (error) {
                 console.log('error', error);
@@ -29,7 +29,7 @@ function App() {
 
     return (
         <div className='App'>
-            <Search setSearch={handleSearch} />
+            <Search search={handleSearch} />
             <Table data={data} search={search} />
         </div>
     );

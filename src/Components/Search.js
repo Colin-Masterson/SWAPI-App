@@ -1,12 +1,11 @@
 import React from 'react';
 
-function Search({ setSearch }) {
+function Search({ search }) {
     return (
         <div className='search-container'>
             <input
                 type='text'
-                className='input'
-                onChange={(e) => setSearch(e)}
+                onChange={(e) => search(e)}
                 placeholder='Search...'
                 className='search'
             />
