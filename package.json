@@ -2,7 +2,7 @@
     "name": "swapiapp",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://Colin-Masterson.github.io",
+    "homepage": "https://colin-masterson.github.io/SWAPI-App/",
     "dependencies": {
         "@material-ui/data-grid": "^4.0.0-alpha.37",
         "@testing-library/jest-dom": "^5.16.2",
