@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.9a8a4b98.css",
-    "main.js": "/static/js/main.8908cc24.js",
-    "index.html": "/index.html",
-    "main.9a8a4b98.css.map": "/static/css/main.9a8a4b98.css.map",
-    "main.8908cc24.js.map": "/static/js/main.8908cc24.js.map"
+    "main.css": "/SWAPI-App/static/css/main.9a8a4b98.css",
+    "main.js": "/SWAPI-App/static/js/main.b0c48cbe.js",
+    "index.html": "/SWAPI-App/index.html",
+    "main.9a8a4b98.css.map": "/SWAPI-App/static/css/main.9a8a4b98.css.map",
+    "main.b0c48cbe.js.map": "/SWAPI-App/static/js/main.b0c48cbe.js.map"
   },
   "entrypoints": [
     "static/css/main.9a8a4b98.css",
-    "static/js/main.8908cc24.js"
+    "static/js/main.b0c48cbe.js"
   ]
 }
