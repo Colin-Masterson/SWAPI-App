@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
 import Table from './Components/DataTable';
+import Search from './Components/Search';
 
 function App() {
     const [data, setData] = useState([]);
+    const [search, setSearch] = useState('');
+
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
+    };
 
     useEffect(() => {
-        const url = 'https://swapi.dev/api/people/';
+        const url = `https://swapi.dev/api/people/?search=${search}`;
 
         const fetchData = async () => {
             try {
@@ -19,11 +25,12 @@ function App() {
         };
 
         fetchData();
-    }, []);
+    }, [search]);
 
     return (
         <div className='App'>
-            <Table data={data} />
+            <Search setSearch={handleSearch} />
+            <Table data={data} search={search} />
         </div>
     );
 }
