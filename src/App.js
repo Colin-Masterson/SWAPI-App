@@ -56,8 +56,6 @@ function App() {
                 ];
 
                 setData(all);
-
-                console.log(all);
             } catch (error) {
                 console.log('error', error);
             }
