@@ -10,18 +10,6 @@ function App() {
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
-        if (search !== '') {
-            const filtered = data.filter((item) => {
-                return Object.values(item.name)
-                    .join('')
-                    .toLowerCase()
-                    .includes(search.toLowerCase());
-            });
-
-            setFilteredData(filtered);
-        } else {
-            setFilteredData(data);
-        }
     };
 
     useEffect(() => {
@@ -77,6 +65,21 @@ function App() {
 
         fetchData();
     });
+
+    useEffect(() => {
+        if (search !== '') {
+            const filtered = data.filter((item) => {
+                return Object.values(item.name)
+                    .join('')
+                    .toLowerCase()
+                    .includes(search.toLowerCase());
+            });
+
+            setFilteredData(filtered);
+        } else {
+            setFilteredData(data);
+        }
+    }, [search, data]);
 
     if (data.length > 0) {
         return (
