@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Table from './Components/DataTable';
 import Search from './Components/Search';
+import Loader from './Components/Loader';
 
 function App() {
     const [data, setData] = useState([]);
@@ -16,7 +17,7 @@ function App() {
                     .toLowerCase()
                     .includes(search.toLowerCase());
             });
-            console.log(filtered);
+
             setFilteredData(filtered);
         } else {
             setFilteredData(data);
@@ -77,15 +78,19 @@ function App() {
         fetchData();
     });
 
-    return (
-        <div className='App'>
-            <Search search={handleSearch} />
-            <Table
-                data={search.length > 1 ? filteredData : data}
-                search={search}
-            />
-        </div>
-    );
+    if (data.length > 0) {
+        return (
+            <div className='App'>
+                <Search search={handleSearch} />
+                <Table
+                    data={search.length > 0 ? filteredData : data}
+                    search={search}
+                />
+            </div>
+        );
+    } else {
+        return <Loader />;
+    }
 }
 
 export default App;
